@@ -82,7 +82,7 @@ function Contact({ basicinfo }) {
         " - " +
         convertTime(openingstijden[secondIndex].end);
     }
-    if (index === -1 || openingstijden[index].isopen === false) {
+    if (index === -1 || openingstijden[index]?.isopen === false) {
       openingstext = t("closed");
     }
     return {

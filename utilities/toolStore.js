@@ -52,6 +52,9 @@ export const calcFee = (nettoPrice, bezorgchosen, bezorggebied) => {
 export const IconFont = createFromIconfontCN({
   scriptUrl: "//at.alicdn.com/t/font_1449733_jat6qq7m3t.js",
 });
+export const NewIconFont = createFromIconfontCN({
+  scriptUrl: "https://at.alicdn.com/t/c/font_1449733_nd3bvaazrna.js",
+});
 export const project_testclient =
   "//at.alicdn.com/t/font_1449733_jat6qq7m3t.js";
 export const colorPurple = "#6f1c75";

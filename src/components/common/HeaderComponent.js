@@ -4,8 +4,9 @@ import gegevens from "Utilities/gegevens";
 import styles from "../../css/layout.less";
 import "animate.css";
 import { Link } from "dva/router";
-import { IconFont } from "Utilities/toolStore";
+import { NewIconFont } from "Utilities/toolStore";
 import LanguageSwitcher from "./LanguageSwitcher";
+import menuIconSVG from "../../assets/menuicon.svg";
 const { Header } = Layout;
 
 const HeaderComponent = ({
@@ -73,20 +74,39 @@ const HeaderComponent = ({
           <Button
             type="primary"
             danger
-            icon={<IconFont type="icon-55" className={styles.iconMenu} />}
+            icon={<NewIconFont type="icon-55" className={styles.iconMenu} />}
           >
             {t("Bestellen")}
           </Button>
         </Link>
       </span>
-    ) : null;
+    ) : (
+      <span className={styles.bestellen}>
+        <Link to={"/menulijst"}>
+          <Button
+            type="primary"
+            danger
+            icon={
+              <NewIconFont
+                type="icon-menu_ic_zdgjjl"
+                className={styles.iconMenu}
+              />
+            }
+          >
+            {t("Menukaart")}
+          </Button>
+        </Link>
+      </span>
+    );
   const reserverenbutton = reservationIsEnabled ? (
     <span className={styles.reseveren}>
       <Link to="/reserveren">
         <Button
           type="primary"
           danger
-          icon={<IconFont type="icon-calender" className={styles.iconMenu} />}
+          icon={
+            <NewIconFont type="icon-calender" className={styles.iconMenu} />
+          }
         >
           {t("Reserveren")}
         </Button>
@@ -253,7 +273,7 @@ const HeaderComponent = ({
         <div className={styles.menuPc}>{menu("horizontal")}</div>
         <div id="barsMenuAndLanguageSwitcherWrapper">
           <div className={styles.barsMenu} type="primary" onClick={showDrawer}>
-            <IconFont type="icon-menu" className={styles.iconMenu} />
+            <NewIconFont type="icon-menu" className={styles.iconMenu} />
           </div>
           <div id="languageSwitcherWrapper">
             <LanguageSwitcher />

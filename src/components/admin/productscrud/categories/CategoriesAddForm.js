@@ -174,7 +174,7 @@ const TheForm = ({
         name="sort_number"
         rules={[
           {
-            required: false,
+            required: true,
             message: t("categorie_order_message"),
           },
         ]}
