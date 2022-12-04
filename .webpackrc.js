@@ -1,7 +1,7 @@
 const path = require("path");
 export default {
   extraBabelPlugins: [
-    ["import", { libraryName: "antd", libraryDirectory: "es", style: "css" }],
+    ["import", { libraryName: "antd", libraryDirectory: "es", style: true }],
   ],
   theme: {
     "@primary-color": "#6f1c75",
