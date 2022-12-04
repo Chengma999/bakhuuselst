@@ -4,7 +4,7 @@ export default {
     ["import", { libraryName: "antd", libraryDirectory: "es", style: "css" }],
   ],
   theme: {
-    "@primary-color": "#1371fa",
+    "@primary-color": "#6f1c75",
   },
   proxy: {
     "/api": {
