@@ -70,15 +70,27 @@ const HeaderComponent = ({
   const bestellenbutton =
     gegevens.homePage && onlinebestellenIsEnabled ? (
       <span className={styles.bestellen}>
-        <Link to="/online_bestellen">
-          <Button
-            type="primary"
-            danger
-            icon={<NewIconFont type="icon-55" className={styles.iconMenu} />}
-          >
-            {t("Bestellen")}
-          </Button>
-        </Link>
+        {gegevens.external_orderlink ? (
+          <a href={gegevens.external_orderlink}>
+            <Button
+              type="primary"
+              danger
+              icon={<NewIconFont type="icon-55" className={styles.iconMenu} />}
+            >
+              {t("Bestellen")}
+            </Button>
+          </a>
+        ) : (
+          <Link to="/online_bestellen">
+            <Button
+              type="primary"
+              danger
+              icon={<NewIconFont type="icon-55" className={styles.iconMenu} />}
+            >
+              {t("Bestellen")}
+            </Button>
+          </Link>
+        )}
       </span>
     ) : (
       <span className={styles.bestellen}>
@@ -145,9 +157,15 @@ const HeaderComponent = ({
     const onlineBestellenPage =
       !onlinebestellenIsEnabled ? null : gegevens.homePage ? (
         <Menu.Item key="Online bestellen">
-          <Link to="/online_bestellen">
-            <span className={styles.nav}>{t("Online bestellen")}</span>
-          </Link>
+          {gegevens.external_orderlink ? (
+            <a href={gegevens.external_orderlink}>
+              <span className={styles.nav}>{t("Online bestellen")}</span>
+            </a>
+          ) : (
+            <Link to="/online_bestellen">
+              <span className={styles.nav}>{t("Online bestellen")}</span>
+            </Link>
+          )}
         </Menu.Item>
       ) : (
         <Menu.Item key="Online bestellen">
